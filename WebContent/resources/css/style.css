@@ -1,0 +1,35 @@
+.login-panel {
+	margin-top: 10%;
+}
+
+.login-panel .panel-heading {
+	text-align: center;
+}
+
+.input-group-addon.glyphicon {
+	top: 0px !important;
+}
+
+body {
+	background: #EAEAEA !important;
+}
+
+.logout {
+	padding-top: 15px;
+	position: relative;
+	display: block;
+	padding-bottom: 15px;
+	line-height: 20px;
+	background-color: transparent;
+}
+
+.registration-form {
+	background: #fff;
+	padding: 15px;
+	border: 1px solid #ddd;
+	margin-top: 10%;
+}
+
+.error * {
+	color: red !important;
+}

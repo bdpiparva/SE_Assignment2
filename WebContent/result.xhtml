@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta charset="ISO-8859-1" />
+	<title>result</title>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+	<h:outputStylesheet name="css/style.css" />
+
+	<h:outputScript name="js/jquery.min.js" />
+	<h:outputScript name="js/bootstrap.min.js" />
+</h:head>
+<h:body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Hello, #{loggedInUser.name}</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<h:form>
+							<h:commandLink action="#{userService.logout()}" styleClass="logout">Sign Out</h:commandLink>
+						</h:form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</h:body>
+</html>

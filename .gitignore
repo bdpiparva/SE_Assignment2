@@ -1,0 +1,6 @@
+WebContent/WEB-INF/lib
+build/
+.settings
+.project
+.classpath
+.gradle

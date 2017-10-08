@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+	<h:outputStylesheet name="css/style.css" />
+
+	<h:outputScript name="js/jquery.min.js" />
+	<h:outputScript name="js/bootstrap.min.js" />
+	<title>Registration</title>
+
+</h:head>
+<h:body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Registration</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.xhtml" class="button">Sign in</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+			<h:form id="userRegistrationBean" styleClass="registration-form">
+				<center>
+					<label>All fields required</label>
+				</center>
+
+				<div class="form-group">
+					<label> Name</label>
+					<h:inputText styleClass="form-control" id="name"
+						value="#{userRegistrationBean.name}" required="true"
+						requiredMessage="Enter name" p:placeholder="Name"
+						validatorMessage="Name should be alphabetic">
+						<f:validateRegex pattern="[aA-zZ]*"></f:validateRegex>
+					</h:inputText>
+					<h:messages for="name" styleClass="error"></h:messages>
+				</div>
+
+				<div class="form-group">
+					<label>Email Address</label>
+					<h:inputText styleClass="form-control" id="email"
+						value="#{userRegistrationBean.email}" required="true"
+						requiredMessage="Enter emailid" p:placeholder="Email Address"
+						validatorMessage="Email Id should be in *@*.com format">
+						<f:validateRegex
+							pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"></f:validateRegex>
+					</h:inputText>
+					<h:messages for="email" styleClass="error"></h:messages>
+				</div>
+
+
+				<div class="form-group">
+					<label>Username</label>
+					<h:inputText styleClass="form-control" id="username"
+						value="#{userRegistrationBean.username}" required="true"
+						requiredMessage="Enter username" p:placeholder="Username"></h:inputText>
+					<h:messages for="username" styleClass="error"></h:messages>
+				</div>
+
+				<div class="form-group">
+					<label>Password</label>
+					<h:inputSecret styleClass="form-control" id="password"
+						value="#{userRegistrationBean.password}" required="true"
+						requiredMessage="Enter password" p:placeholder="Password"></h:inputSecret>
+					<h:messages for="password" styleClass="error"></h:messages>
+				</div>
+
+				<div class="form-group">
+					<h:commandButton id="Register" value="Register"
+						action="#{userService.register(userRegistrationBean)}"
+						class="btn btn-info" />
+				</div>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>
